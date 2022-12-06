@@ -16,7 +16,6 @@ function RelatedLinks({ intl }) {
   const {
     org, tabs,
   } = useModel('courseHomeMeta', courseId);
-  console.log('tabs heeeeeeeeeey 1111222', tabs);
   const { administrator } = getAuthenticatedUser();
   const logLinkClicked = (linkName) => {
     sendTrackEvent('edx.ui.lms.course_progress.related_links.clicked', {
