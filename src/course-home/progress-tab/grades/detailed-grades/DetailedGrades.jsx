@@ -19,6 +19,7 @@ function DetailedGrades({ intl }) {
   } = useSelector(state => state.courseHome);
   const {
     org,
+    tabs,
   } = useModel('courseHomeMeta', courseId);
   const {
     gradesFeatureIsFullyLocked,
@@ -40,7 +41,7 @@ function DetailedGrades({ intl }) {
     <Hyperlink
       variant="muted"
       isInline
-      destination={`/course/${courseId}/home`}
+      destination={tabs.find(({ slug }) => slug === 'outline').url}
       onClick={logOutlineLinkClick}
       tabIndex={gradesFeatureIsFullyLocked ? '-1' : '0'}
     >
